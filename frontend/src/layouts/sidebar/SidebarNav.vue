@@ -84,10 +84,8 @@ const sections: SidebarNavSection[] = [
 
 <style scoped>
 .sidebar-nav {
-    flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 4px;
 }
 
 .sidebar-nav__section {
@@ -99,6 +97,7 @@ const sections: SidebarNavSection[] = [
     font-family: var(--font-primary);
     font-size: 14px;
     font-weight: 600;
+    line-height: 21px;
     color: var(--color-text-tertiary);
     padding: 4px 0;
     margin-bottom: 4px;
@@ -116,6 +115,7 @@ const sections: SidebarNavSection[] = [
     text-decoration: none;
     font-family: var(--font-primary);
     font-size: 14px;
+    letter-spacing: 1.7px;
     font-weight: 500;
     transition: all 0.15s ease;
 }
@@ -133,6 +133,7 @@ const sections: SidebarNavSection[] = [
     font-family: var(--font-primary);
     font-size: 12px;
     font-weight: 600;
+    letter-spacing: 0.8px;
     color: var(--color-primary);
     background: var(--color-tag-purple-bg);
     padding: 4px 8px;

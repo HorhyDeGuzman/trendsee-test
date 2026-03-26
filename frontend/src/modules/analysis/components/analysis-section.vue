@@ -30,12 +30,17 @@ defineProps<{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 32px;
+    padding: 4px 0;
+    margin-top: 8px;
 }
 
 .analysis-section__header h3 {
     font-family: var(--font-primary);
     font-size: 16px;
     font-weight: 600;
+    letter-spacing: 0.15px;
+    line-height: 21px;
     color: var(--color-text-heading);
 }
 
@@ -45,7 +50,7 @@ defineProps<{
     padding: 16px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 24px;
 }
 
 .analysis-section__body :deep(p) {
@@ -53,7 +58,8 @@ defineProps<{
     font-size: 14px;
     font-weight: 400;
     color: var(--color-text-secondary);
-    line-height: 1.5;
+    line-height: 21px;
+    letter-spacing: 0.25px;
 }
 
 .analysis-section__body :deep(h4) {

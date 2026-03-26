@@ -15,7 +15,7 @@ import IconChevronRight from '@/assets/icons/nav/IconChevronRight.vue'
         <div class="sidebar-tokens__bar">
             <div
                 class="sidebar-tokens__fill"
-                style="width: 28%"
+                style="width: 50%"
             ></div>
         </div>
         <div class="sidebar-tokens__creative">
@@ -45,11 +45,12 @@ import IconChevronRight from '@/assets/icons/nav/IconChevronRight.vue'
 .sidebar-tokens__left {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 4px;
 }
 
 .sidebar-tokens__label {
     font-family: var(--font-primary);
+    font-style: italic;
     font-size: 14px;
     font-weight: 600;
     color: var(--color-sidebar);
@@ -73,6 +74,7 @@ import IconChevronRight from '@/assets/icons/nav/IconChevronRight.vue'
     font-family: var(--font-primary);
     font-size: 14px;
     font-weight: 400;
+    letter-spacing: 0.3px;
     color: var(--color-sidebar);
 }
 
@@ -84,6 +86,7 @@ import IconChevronRight from '@/assets/icons/nav/IconChevronRight.vue'
     font-family: var(--font-primary);
     font-size: 14px;
     font-weight: 500;
+    letter-spacing: 0.3px;
     margin-top: 4px;
     cursor: pointer;
     border-radius: var(--radius-sm);

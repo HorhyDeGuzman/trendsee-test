@@ -37,12 +37,13 @@ import IconChevronRight from '@/assets/icons/nav/IconChevronRight.vue'
 .sidebar-user {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 3px;
 }
 
 .sidebar-user__profile {
     display: flex;
     align-items: center;
+    height: 48px;
     gap: 8px;
     padding: 6px 4px;
 }
@@ -68,6 +69,8 @@ import IconChevronRight from '@/assets/icons/nav/IconChevronRight.vue'
     font-family: var(--font-primary);
     font-size: 14px;
     font-weight: 500;
+    line-height: 21px;
+    letter-spacing: 0.2px;
     color: var(--color-text-secondary);
 }
 
@@ -75,6 +78,8 @@ import IconChevronRight from '@/assets/icons/nav/IconChevronRight.vue'
     font-family: var(--font-primary);
     font-size: 12px;
     font-weight: 500;
+    line-height: 15px;
+    letter-spacing: 0.4px;
     color: var(--color-text-muted);
 }
 
@@ -88,7 +93,7 @@ import IconChevronRight from '@/assets/icons/nav/IconChevronRight.vue'
 .sidebar-user__lang {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     height: 32px;
     padding: 8px 12px;
     cursor: pointer;

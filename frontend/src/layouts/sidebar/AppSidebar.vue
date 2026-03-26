@@ -4,6 +4,7 @@ import IconLogo from '@/assets/icons/IconLogo.vue'
 import SidebarNav from './SidebarNav.vue'
 import SidebarTokens from './SidebarTokens.vue'
 import SidebarUser from './SidebarUser.vue'
+import IconRollUp from '@/assets/icons/action/IconRollUp.vue'
 </script>
 
 <template>
@@ -15,6 +16,7 @@ import SidebarUser from './SidebarUser.vue'
             <IconLogo color="var(--color-sidebar)" />
             <span class="sidebar__logo-text">trendsee</span>
             <span class="sidebar__logo-badge">Beta</span>
+            <IconRollUp class="sidebar__roll-up" />
         </RouterLink>
 
         <SidebarNav />
@@ -49,6 +51,7 @@ import SidebarUser from './SidebarUser.vue'
 .sidebar__logo {
     display: flex;
     align-items: center;
+    position: relative;
     gap: 6px;
     height: 28px;
     text-decoration: none;
@@ -58,10 +61,12 @@ import SidebarUser from './SidebarUser.vue'
 
 .sidebar__logo-text {
     font-family: var(--font-heading);
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 23px;
+    font-weight: 600;
     color: var(--color-sidebar);
-    letter-spacing: -0.5px;
+    height: 28px;
+    line-height: 28px;
+    letter-spacing: -0.467px;
 }
 
 .sidebar__logo-badge {
@@ -72,7 +77,13 @@ import SidebarUser from './SidebarUser.vue'
     background: var(--color-border-alt);
     padding: 4px 8px;
     border-radius: 100px;
-    letter-spacing: 0.5px;
+    letter-spacing: 1.8px;
+}
+
+.sidebar__roll-up {
+    position: absolute;
+    top: -4px;
+    right: -8px;
 }
 
 .sidebar__bottom {

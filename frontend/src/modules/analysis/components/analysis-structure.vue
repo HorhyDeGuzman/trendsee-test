@@ -37,12 +37,18 @@ import IconTime from '@/assets/icons/analysis/IconTime.vue'
     display: flex;
     flex-direction: column;
     gap: 8px;
+    margin-bottom: 32px;
 }
 
 .analysis-structure__header h3 {
+    display: flex;
+    align-items: center;
+    padding: 4px 0;
     font-family: var(--font-primary);
     font-size: 16px;
     font-weight: 600;
+    letter-spacing: 0.15px;
+    line-height: 24px;
     color: var(--color-text-heading);
 }
 
@@ -60,7 +66,7 @@ import IconTime from '@/assets/icons/analysis/IconTime.vue'
     display: flex;
     align-items: start;
     justify-content: end;
-    min-width: 115px;
+    min-width: 127px;
 }
 
 .analysis-structure__step-time {
@@ -72,6 +78,8 @@ import IconTime from '@/assets/icons/analysis/IconTime.vue'
     font-family: var(--font-primary);
     font-size: 12px;
     font-weight: 500;
+    letter-spacing: 0.4px;
+    line-height: 14.5px;
     color: var(--color-text-secondary);
     white-space: nowrap;
 }
@@ -92,6 +100,8 @@ import IconTime from '@/assets/icons/analysis/IconTime.vue'
     font-family: var(--font-primary);
     font-size: 14px;
     font-weight: 600;
+    letter-spacing: 0.1px;
+    line-height: 21px;
     color: var(--color-text-heading);
 }
 
@@ -99,7 +109,8 @@ import IconTime from '@/assets/icons/analysis/IconTime.vue'
     font-family: var(--font-primary);
     font-size: 14px;
     font-weight: 400;
+    letter-spacing: 0.1px;
     color: var(--color-text-secondary);
-    line-height: 1.5;
+    line-height: 21px;
 }
 </style>

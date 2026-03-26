@@ -134,7 +134,7 @@ const props = withDefaults(
     font-size: 12px;
     font-weight: 500;
     letter-spacing: 0.4px;
-    line-height: 1.21;
+    line-height: 14.5px;
 }
 
 .video-preview__actions {

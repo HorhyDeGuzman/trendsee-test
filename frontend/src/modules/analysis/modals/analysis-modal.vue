@@ -6,7 +6,7 @@ import IconAdapt from '@/assets/icons/analysis/IconAdapt.vue'
 import AnalysisVideoSide from '@/modules/analysis/components/analysis-video-side.vue'
 import AnalysisInfoHeader from '@/modules/analysis/components/analysis-info-header.vue'
 import AnalysisTranscription from '@/modules/analysis/components/analysis-transcription.vue'
-import AnalysisSection from '@/modules/analysis/components/analysis-section.vue'
+import AnalysisSummary from '@/modules/analysis/components/analysis-summary.vue'
 import AnalysisStructure from '@/modules/analysis/components/analysis-structure.vue'
 import AnalysisHooks from '@/modules/analysis/components/analysis-hooks.vue'
 import AnalysisTechniques from '@/modules/analysis/components/analysis-techniques.vue'
@@ -49,23 +49,15 @@ const emit = defineEmits<{
                 <span>Адаптировать</span>
             </button>
 
-            <div class="analysis-modal__sections">
-                <AnalysisSection title="Суть">
-                    <p>
-                        Разбор состава/логики: он в человеческих словах переводит состав/механику
-                        ("что реально делает Х"), называет 2–3 работающих активных компонента и 2–3
-                        маркетинговых "пустых" обещания.
-                    </p>
-                </AnalysisSection>
+            <AnalysisSummary />
 
-                <AnalysisStructure />
+            <AnalysisStructure />
 
-                <AnalysisHooks />
+            <AnalysisHooks />
 
-                <AnalysisTechniques />
+            <AnalysisTechniques />
 
-                <AnalysisMarketing />
-            </div>
+            <AnalysisMarketing />
         </div>
     </ModalPanel>
 </template>
@@ -78,7 +70,6 @@ const emit = defineEmits<{
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    gap: 16px;
     scrollbar-width: none;
 }
 
@@ -111,26 +102,21 @@ const emit = defineEmits<{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 12px;
     padding: 16px 24px;
-    margin: 16px 0;
     background: var(--color-primary);
     color: var(--color-surface);
     border-radius: var(--radius-md);
     font-family: var(--font-primary);
     font-size: 18px;
     font-weight: 600;
+    letter-spacing: 0.25px;
+    line-height: 24px;
     width: 220px;
     transition: background 0.15s ease;
 }
 
 .analysis-modal__adapt-btn:hover {
     background: var(--color-primary-hover);
-}
-
-.analysis-modal__sections {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
 }
 </style>

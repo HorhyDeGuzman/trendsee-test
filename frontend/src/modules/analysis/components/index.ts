@@ -1,6 +1,6 @@
-export { default as AnalysisSection } from './analysis-section.vue'
 export { default as AnalysisInfoHeader } from './analysis-info-header.vue'
 export { default as AnalysisTranscription } from './analysis-transcription.vue'
+export { default as AnalysisSummary } from './analysis-summary.vue'
 export { default as AnalysisStructure } from './analysis-structure.vue'
 export { default as AnalysisHooks } from './analysis-hooks.vue'
 export { default as AnalysisTechniques } from './analysis-techniques.vue'

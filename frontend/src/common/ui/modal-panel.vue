@@ -6,7 +6,7 @@ const props = withDefaults(
         visible?: boolean
         width?: string
     }>(),
-    { visible: true, width: '72dvw' },
+    { visible: true, width: '71.9dvw' },
 )
 
 const emit = defineEmits<{
@@ -79,7 +79,6 @@ const { overlayRef, handleMouseDown, handleMouseUp } = useModalOverlay(
     border-radius: 24px 0 0 24px;
     position: relative;
 }
-
 </style>
 
 <style>

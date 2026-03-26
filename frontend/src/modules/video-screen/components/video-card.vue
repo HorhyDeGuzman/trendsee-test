@@ -37,7 +37,12 @@ const emit = defineEmits<{
 
             <div class="video-card__date">{{ video.date }}</div>
 
-            <button class="video-card__button" @click.stop="emit('analyze', video)">Анализ</button>
+            <button
+                class="video-card__button"
+                @click.stop="emit('analyze', video)"
+            >
+                Анализ
+            </button>
         </div>
     </div>
 </template>
@@ -66,7 +71,7 @@ const emit = defineEmits<{
     font-weight: 500;
     color: var(--color-text-secondary);
     letter-spacing: 0.4px;
-    line-height: 1.21;
+    line-height: 14.5px;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -93,6 +98,7 @@ const emit = defineEmits<{
     font-weight: 600;
     letter-spacing: 0.4px;
     line-height: 1.33;
+    height: 40px;
     text-align: center;
     cursor: pointer;
     transition: background 0.15s ease;

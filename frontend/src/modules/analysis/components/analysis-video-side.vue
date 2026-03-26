@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import type { VideoData } from '@/common/models/types/video'
 import type { StatItem } from '@/modules/analysis/models/analysis.types'
 import { VideoPreview, BloggerInfo } from '@/modules/video-screen'
@@ -13,10 +14,17 @@ defineProps<{
     video: VideoData
 }>()
 
+const expanded = ref(false)
+
 const stats: StatItem[] = [
     { label: 'Просмотры', value: '1,2 млн', icon: IconEye, color: 'var(--color-stat-views)' },
     { label: 'Лайки', value: '1,2 млн', icon: IconHeart, color: 'var(--color-stat-likes)' },
-    { label: 'Комментарии', value: '1,2 млн', icon: IconComment, color: 'var(--color-stat-comments)' },
+    {
+        label: 'Комментарии',
+        value: '1,2 млн',
+        icon: IconComment,
+        color: 'var(--color-stat-comments)',
+    },
     { label: 'Репосты', value: '1,2 млн', icon: IconPlane, color: 'var(--color-stat-reposts)' },
     { label: 'ER', value: '1,2 млн', icon: IconEr, color: 'var(--color-stat-views)' },
 ]
@@ -47,7 +55,16 @@ const stats: StatItem[] = [
             <BloggerInfo :blogger="video.blogger" />
 
             <div class="analysis-video-side__description">
-                <p>{{ video.description }}</p>
+                <p :class="{ 'analysis-video-side__description-text--expanded': expanded }">
+                    {{ video.description }}
+                </p>
+                <button
+                    v-if="!expanded"
+                    class="analysis-video-side__description-more"
+                    @click="expanded = true"
+                >
+                    Ещё
+                </button>
             </div>
 
             <div class="analysis-video-side__stats">
@@ -91,19 +108,23 @@ const stats: StatItem[] = [
 
 .analysis-video-side__meta {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    height: 24px;
 }
 
 .analysis-video-side__date {
     font-family: var(--font-primary);
     font-size: 12px;
     font-weight: 500;
+    line-height: 14.5px;
+    letter-spacing: 0.5px;
     color: var(--color-text-muted);
 }
 
 .analysis-video-side__actions {
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 8px;
     color: var(--color-text-muted);
 }
@@ -119,7 +140,33 @@ const stats: StatItem[] = [
     font-size: 12px;
     font-weight: 500;
     color: var(--color-text-alt);
-    line-height: 1.4;
+    line-height: 14.5px;
+    letter-spacing: 0.5px;
+    font-style: normal;
+    height: 28px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.analysis-video-side__description-text--expanded {
+    display: block !important;
+    -webkit-line-clamp: unset !important;
+}
+
+.analysis-video-side__description-more {
+    font-family: var(--font-primary);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    color: var(--color-text);
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    text-align: left;
+    width: fit-content;
 }
 
 .analysis-video-side__stats {
@@ -150,6 +197,8 @@ const stats: StatItem[] = [
 .analysis-video-side__stat-label {
     font-size: 12px;
     font-weight: 500;
+    line-height: 14.5px;
+    letter-spacing: 0.4px;
     color: var(--color-text-alt);
 }
 

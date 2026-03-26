@@ -65,7 +65,7 @@ defineProps<{
     font-weight: 600;
     color: var(--color-primary);
     letter-spacing: 0.1px;
-    line-height: 1.5;
+    line-height: 21px;
 }
 
 .blogger-info__subs {
@@ -81,7 +81,7 @@ defineProps<{
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 4px;
+    padding: 1px 1px 8px;
     flex-shrink: 0;
     cursor: pointer;
 }

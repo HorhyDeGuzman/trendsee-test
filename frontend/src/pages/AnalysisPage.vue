@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import type { VideoData } from '@/common/models/types/video'
 import AppSidebar from '@/layouts/sidebar/AppSidebar.vue'
 import { VideoGrid, AnalysisModal } from '@/modules/analysis'
+import { analysisDescription } from '@/modules/analysis/consts/analysis-data'
 import videoCartImage1 from '@/assets/images/video-cart-image.png'
 import videoCartImage2 from '@/assets/images/video-cart-image-2.png'
 import videoCartImage3 from '@/assets/images/video-cart-image-3.png'
@@ -13,14 +14,34 @@ const showAnalysis = ref(false)
 const selectedVideo = ref<VideoData | null>(null)
 
 function openAnalysis(video: VideoData) {
-    selectedVideo.value = video
+    selectedVideo.value = { ...video, description: analysisDescription }
     showAnalysis.value = true
 }
 
-const images = [videoCartImage1, videoCartImage2, videoCartImage3]
+const baseImages = [videoCartImage1, videoCartImage2, videoCartImage3]
+
+const imageGrid = [
+    videoCartImage1,
+    videoCartImage2,
+    videoCartImage3,
+    videoCartImage1,
+    videoCartImage2,
+    videoCartImage3,
+    videoCartImage1,
+    videoCartImage2,
+    videoCartImage3,
+    videoCartImage1,
+    videoCartImage2,
+    videoCartImage2,
+    videoCartImage1,
+    videoCartImage1,
+    videoCartImage1,
+    videoCartImage1,
+    ...Array.from({ length: 8 }, (_, i) => baseImages[i % baseImages.length]!),
+]
 
 const videos: VideoData[] = Array.from({ length: 24 }, (_, i) => ({
-    image: images[i % images.length]!,
+    image: imageGrid[i] ?? videoCartImage1,
     badges: [
         { icon: 'reels', label: 'Reels' },
         { icon: 'fire', label: 'X10' },
@@ -47,13 +68,16 @@ const videos: VideoData[] = Array.from({ length: 24 }, (_, i) => ({
 
         <div class="analysis-page__container">
             <div class="analysis-page__content">
-                <VideoGrid :videos="videos" @analyze="openAnalysis" />
+                <VideoGrid
+                    :videos="videos"
+                    @analyze="openAnalysis"
+                />
             </div>
 
             <div class="analysis-page__footer">
                 <button class="analysis-page__load-more">
                     <IconLightning />
-                    <span>Найти еще ролики</span>
+                    <span class="analysis-page__load-more-text">Найти еще ролики</span>
                 </button>
 
                 <div class="analysis-page__counter">
@@ -126,6 +150,7 @@ const videos: VideoData[] = Array.from({ length: 24 }, (_, i) => ({
     font-family: var(--font-primary);
     font-size: 16px;
     font-weight: 600;
+    letter-spacing: 0.4px;
     cursor: pointer;
     transition: background 0.15s ease;
 }
@@ -134,16 +159,22 @@ const videos: VideoData[] = Array.from({ length: 24 }, (_, i) => ({
     background: var(--color-primary-hover);
 }
 
+.analysis-page__load-more-text {
+    margin-left: 2px;
+}
+
 .analysis-page__counter {
     position: absolute;
     right: 24px;
+    bottom: 0;
     display: flex;
     align-items: center;
     gap: 10px;
     padding: 16px 24px;
     background: rgba(0, 0, 0, 0.6);
-    border-radius: var(--radius-xl);
+    border-radius: 100px;
     backdrop-filter: blur(8px);
+    letter-spacing: 0.5px;
     color: var(--color-surface);
     font-family: var(--font-primary);
     font-size: 16px;

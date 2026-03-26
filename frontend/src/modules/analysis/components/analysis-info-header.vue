@@ -16,7 +16,7 @@ import IconFlagEn from '@/assets/icons/locale/IconFlagEn.vue'
                 <span class="analysis-info-header__song-name">Tyga – Pop it off</span>
             </div>
             <span class="analysis-info-header__lang">
-                Язык: <IconFlagEn /> Английский
+                Язык: <IconFlagEn class="analysis-info-header__flag" /> Английский
             </span>
         </div>
     </div>
@@ -39,12 +39,15 @@ import IconFlagEn from '@/assets/icons/locale/IconFlagEn.vue'
     flex-direction: column;
     gap: 8px;
     padding-right: 90px;
+    margin-bottom: 16px;
 }
 
 .analysis-info-header__label {
     font-family: var(--font-primary);
     font-size: 14px;
     font-weight: 500;
+    line-height: 21px;
+    letter-spacing: 0.25px;
     color: var(--color-text-secondary);
 }
 
@@ -52,9 +55,9 @@ import IconFlagEn from '@/assets/icons/locale/IconFlagEn.vue'
     font-family: var(--font-primary);
     font-size: 24px;
     font-weight: 600;
+    line-height: 29px;
     margin-bottom: 8px;
     color: var(--color-text-heading);
-    line-height: 1.3;
 }
 
 .analysis-info-header__meta {
@@ -77,12 +80,27 @@ import IconFlagEn from '@/assets/icons/locale/IconFlagEn.vue'
     color: var(--color-text-alt);
 }
 
+.analysis-info-header__song-name {
+    font-family: var(--font-primary);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.7px;
+    line-height: 16px;
+    color: var(--color-text-alt);
+}
+
 .analysis-info-header__lang {
     display: flex;
     align-items: center;
     gap: 8px;
     font-size: 14px;
+    letter-spacing: 0.25px;
+    line-height: 21px;
     font-weight: 400;
+}
+
+.analysis-info-header__flag {
+    margin-left: 4px;
 }
 
 .analysis-info-header__tags {
@@ -90,11 +108,14 @@ import IconFlagEn from '@/assets/icons/locale/IconFlagEn.vue'
     flex-wrap: wrap;
     gap: 8px;
     max-width: 600px;
+    margin-bottom: 24px;
 }
 
 .analysis-info-header__tag {
     padding: 4px 12px;
     border-radius: 1000px;
+    letter-spacing: 0.25px;
+    line-height: 21px;
     font-family: var(--font-primary);
     font-size: 14px;
     font-weight: 500;
